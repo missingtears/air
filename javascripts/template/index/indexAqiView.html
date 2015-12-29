@@ -1,0 +1,37 @@
+<div class="aqiviewcontainer">
+    <table class="air-table">
+        <tr>
+            <% for (key in data[0].aqiCurrentDto.datas){ %>
+                <% if(data[0].aqiCurrentDto.datas.hasOwnProperty(key)){ %>
+                    <th width="16%"><%= key %></th>
+                <% } %>
+            <% } %>
+        </tr>
+        <tr>
+            <% for (key in data[0].aqiCurrentDto.datas){ %>
+                <% if(data[0].aqiCurrentDto.datas.hasOwnProperty(key)){ %>
+                    <% var index = 0; %>
+                    <td class="chief"><%= data[0].aqiCurrentDto.datas[key] || '/' %></td>
+                <% } %>
+            <% } %>
+        </tr>
+    </table>
+    <h2 class="title">首要污染物：<%= data[0].aqiCurrentDto.chiefPollutants || '无' %></h2>
+    <p class="tag">单位：ug/m3</p>
+    <table class="layout-table">
+        <tr>
+            <% for (key in data[1].advice){ %>
+                <% if(data[1].advice.hasOwnProperty(key)){ %>
+                    <td class="traveCls"><img src="../images/travel/<%= data[1].advice[key].icon %>" width="40"></td>
+                <% } %>
+            <% } %>
+        </tr>
+        <tr>
+            <% for (key in data[1].advice){ %>
+                <% if(data[1].advice.hasOwnProperty(key)){ %>
+                    <td class="txt"><%= data[1].advice[key].text %></td>
+                <% } %>
+            <% } %>
+        </tr>
+    </table>
+</div>

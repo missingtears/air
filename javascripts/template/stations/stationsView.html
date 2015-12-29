@@ -1,0 +1,22 @@
+<div class="wrapper-cls" id="stations-scroll-id">
+	<div class="scroller-cls">
+		<div class="stations-container">
+			<table class="stations">
+				<tr>
+					<th>站点</th>
+					<th>首要污染物</th>
+					<th>AQI指数</th>
+				</tr>
+				<% for(var i = 0, len = data.length; i < len; i++){ %>
+					<% var $item = data[i]; %>
+					<tr rel="<%= $item.id %>">
+						<td><%= $item.name %></td>
+						<td><%= $item.chiefPollutants || '无' %></td>
+						<td><span style="background-color: <%= bgColor[i] %>"><%= $item.aqiValue %></span></td>	
+					</tr>
+				<% } %>
+			</table>
+            <div class="copyright">聚光科技 提供技术支持</div>
+		</div>
+	</div>
+</div>

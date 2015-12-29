@@ -1,0 +1,79 @@
+/**
+ * airtable
+ * @authors fengpingping (pingping_feng@fpi-inc.com)
+ * @date    2015-06-16 16:32:30
+ * @version 1.0.0
+ */
+
+@import compass/utilities
+@import compass/css3
+
+.air-table
+	width: 100%
+	max-width: 100%
+	border-collapse: collapse
+	border-spacing: 0
+	background-color: transparent
+	font-size: 12px
+	& tr
+		& th
+			font-weight: 500
+			text-align: center
+			color: #4A4A4A
+			line-height: 30px
+		& td
+			text-align: center
+			background-color: #349CE8
+			color: #fff
+
+
+.layout-table
+	clear: both
+	width: 100%
+	max-width: 100%
+	border-collapse: collapse
+	border-spacing: 0
+	background-color: transparent
+	font-size: 12px
+	& tr
+		& td
+			&.traveCls
+				height: 45px
+			text-align: center
+			&.txt
+				font-size: 14px
+				color: #4A4A4A
+
+
+table.stations
+	clear: both
+	width: 100%
+	max-width: 100%
+	border-collapse: collapse
+	border-spacing: 0
+	background-color: transparent
+	font-size: 12px
+	& tr
+		&:hover
+			& td
+				background-color: #f4f4f4
+		& th
+			background-color: #F2F4F7
+			height: 32px
+			line-height: 32px
+			color: #96A0AA
+			font-weight: 500
+			text-align: center
+		& td
+			height: 37px
+			line-height: 37px
+			text-align: center
+			color: #333
+			font-size: 14px
+			& span
+				+inline-block
+				width: 45px
+				line-height: 23px
+				background-color: #3ED73E
+				+border-radius(4px)
+				color: #fff

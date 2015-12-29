@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>杭州空气质量</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/amui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.min.css" media="all">
+    <script type="text/javascript">
+        if(typeof(Storage) !== "undefined") {
+            // Code for localStorage/sessionStorage.
+            var currentLocalStorageId = localStorage.getItem("hangzhouAirAppId");
+            var currentLocalStorageName = localStorage.getItem("hangzhouAirAppName");
+            document.getElementsByTagName("title")[0].innerHTML = currentLocalStorageName;
+            // 杭州
+            var currentCityId = currentLocalStorageId;
+            var serverIpAddress = 'http://60.12.237.34:9909';
+
+        } else {
+            // Sorry! No Web Storage support..
+        }
+        // 北京
+        // var currentCityId = '2c9394f04a2d29c5014a2d2d6a500001';
+        // var serverIpAddress = 'http://172.19.20.87:8083';
+    </script>
+</head>
+<body>
+    <div id="wrapper" class="wrapperPages">
+        <div class="scroller">
+            <div class="index-template">
+                <div class="air-temp" id="airTemp"></div>
+                <div class="aqi-temp" id="aqiTemp"></div>
+                <div class="data-temp" id="dataTemp" style="display: none;"></div>
+                <div class="copyright">聚光科技 提供技术支持</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fpi-map"></div>
+
+    <div id="fpi-stations"></div>
+
+	<script data-main="../javascripts/main" src="../bower_components/requirejs/require.min.js"></script>
+</body>
+</html>

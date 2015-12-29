@@ -1,0 +1,33 @@
+{
+  "name": "airapp",
+  "version": "1.0.0",
+  "homepage": "https://github.com/fpi-inc/air",
+  "authors": [
+    "f.ruguo <f.ruguo@gmail.com>"
+  ],
+  "description": "air quality by hangzhou",
+  "keywords": [
+    "air",
+    "quality",
+    "hangzhou"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.18",
+    "backbone": "~1.2.1",
+    "jquery": "~2.1.4",
+    "domready": "~1.0.8",
+    "requirejs-domready": "~2.0.1",
+    "zepto": "~1.1.6",
+    "zeptotouch": "~1.1.4",
+    "require-css": "~0.1.8",
+    "Chart.js": "~1.0.2"
+  }
+}

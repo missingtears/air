@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>杭州空气质量</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/amui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.min.css" media="all">
+    <script type="text/javascript">
+        // 杭州
+        var currentCityId = '2c9388c9497585360149758716e40002';
+        var serverIpAddress = 'http://60.12.237.34:9909';
+        // 北京
+        // var currentCityId = '2c9394f04a2d29c5014a2d2d6a500001';
+        // var serverIpAddress = 'http://172.19.20.87:8083';
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="am-tab">
+            <div id="tab1" class="am-tab-item" data-tab="selected">实时</div>
+            <div id="tab2" class="am-tab-item" data-tab="">地图</div>
+            <div id="tab3" class="am-tab-item" data-tab="">站点</div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div class="scroller">
+            <div class="index-template">
+                <div class="air-temp" id="airTemp"><span class="indexloading">数据加载中...</span></div>
+                <div class="aqi-temp" id="aqiTemp"></div>
+                <div class="data-temp" id="dataTemp"></div>
+                <div class="copyright">聚光科技 提供技术支持</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fpi-map"></div>
+
+    <div id="fpi-stations"></div>
+
+	<script data-main="../javascripts/main" src="../bower_components/requirejs/require.min.js"></script>
+</body>
+</html>

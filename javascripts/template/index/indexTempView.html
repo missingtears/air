@@ -1,0 +1,37 @@
+<div class="air-temp-bg">
+    <canvas id="indexCanvas" height="345"></canvas>
+    <div class="date"><%= data[1].currentdate %></div>
+    <div class="refresh"><%= data[1].distime %></div>
+    <div class="aqi-layout">
+        <div class="aqi"><%= data[0].aqiCurrentDto.aqiValue %></div>
+        <div class="tags">
+            <div class="tagup">AQI</div>
+            <div class="tagdown">/500</div>
+        </div>
+        <div class="state"><span style="background-color: <%= data[1].aqiBgColor %>"><%= data[0].aqiCurrentDto.aqiType %></span></div>
+    </div>
+    <div class="weather">
+        <div class="temp"><%= data[0].weatherCurrentDto.tempCurrent %></div>
+        <div class="tags">
+            <div class="tag">°C </div>
+            <div class="info"><span class="icon"></span> <%= data[0].weatherCurrentDto.weather %>，<%= data[0].weatherForcasts[1].lowerTemp %>-<%= data[0].weatherForcasts[1].highTemp %>℃.</div>
+        </div>
+    </div>
+</div>
+<div class="air-temp-weather">
+    <div id="weatherwrapper">
+        <div class="weatherwrapperscroller">
+            <div class="container">
+                <% for(var i = 0, len = data[0].weatherForcasts.length; i < len; i++) { %>
+                    <% var items = data[0].weatherForcasts[i]; %>
+                    <div class="items <%= i == 1 ? 'current' : '' %>">
+                        <div class="date"><%= data[1].aqiForcast[1][i] %></div>
+                        <div class="icon" style="background-image: url('../images/weather/<%= data[1].aqiForcast[2][i] %>')"></div>
+                        <span class="degree" style="background-color: <%= data[1].aqiForcast[0][i] %>"><%= data[0].aqiForcastDtos[i] && data[0].aqiForcastDtos[i].aqiType.substr(0, 2) || '/' %></span>
+                        <!-- <div class="temperature"><%= items && items.lowerTemp %>-<%= items && items.highTemp %></div> -->
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
